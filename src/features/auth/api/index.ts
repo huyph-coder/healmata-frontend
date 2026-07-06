@@ -1,1 +1,1 @@
-export { loginBasic } from './loginBasic'
+export { loginBasic } from './login'

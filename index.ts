@@ -1,1 +1,5 @@
-import "expo-router/entry";
+
+import App from "@/app";
+import { registerRootComponent } from "expo";
+
+registerRootComponent(App);
