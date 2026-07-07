@@ -1,5 +1,7 @@
 import { useAuthStore } from "@/stores";
 
-export default function useIsLoggedIn() {
+export const useIsLoggedIn = () => {
     return useAuthStore(s => s.isAuthenticated)
 }
+
+export default useIsLoggedIn;

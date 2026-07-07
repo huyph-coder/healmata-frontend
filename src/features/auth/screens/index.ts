@@ -1,7 +1,7 @@
-export { default as SplashScreen } from "./splashScreen";
-export { default as LoginScreen } from "./loginScreen";
-export { default as SignUpScreen } from "./signUpScreen";
-export { default as ForgotPasswordScreen } from "./forgotPasswordScreen";
-export { default as VerifyResetCodeScreen } from "./verifyResetCodeScreen";
-export { default as ResetPasswordScreen } from "./resetPasswordScreen";
-export { default as WelcomeScreen } from "./welcomeScreen";
+export { default as SplashScreen } from "./splash";
+export { default as LoginScreen } from "./login";
+export { default as SignUpScreen } from "./signUp";
+export { default as ForgotPasswordScreen } from "./forgotPassword";
+export { default as VerifyResetCodeScreen } from "./verifyResetCode";
+export { default as ResetPasswordScreen } from "./resetPassword";
+export { default as WelcomeScreen } from "./welcome";

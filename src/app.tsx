@@ -1,24 +1,15 @@
 import { AppTheme } from "@/theme";
-import { useEffect } from "react";
-import { BackHandler } from "react-native";
-import { Navigation } from "@/navigation";
-import { navigationRef } from "./navigation/navRef";
+import { createStaticNavigation } from "@react-navigation/native";
+import { RootNavigator } from "./navigation/navigator";
+import { useBlockBack } from "./hooks";
+import { navRef } from "@/navigation/ref";
+
+const Navigation = createStaticNavigation(RootNavigator)
 
 const App = () => {
-  useEffect(() => {
-    const sub = BackHandler.addEventListener(
-      "hardwareBackPress",
-      () => true
-    );
-
-    return () => sub.remove();
-  }, []);
-
+  useBlockBack();
   return (
-    <Navigation
-      theme={AppTheme}
-      ref={navigationRef as any}
-    />
+    <Navigation theme={AppTheme} ref={navRef as any} />
   );
 }
 
