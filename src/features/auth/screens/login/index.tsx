@@ -3,7 +3,7 @@ import { auth } from "@/features/auth/api/login"
 import { StackActions } from "@react-navigation/native"
 import { Text } from "react-native"
 import { SafeAreaView } from "react-native-safe-area-context"
-import { styles } from "./styles"
+import styles from "./styles"
 import { useNavigation } from "@react-navigation/native"
 
 const LoginScreen = () => {
