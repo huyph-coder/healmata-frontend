@@ -1,15 +1,17 @@
-import { AppTheme } from "@/theme";
 import { createStaticNavigation } from "@react-navigation/native";
 import { RootNavigator } from "./navigation/navigator";
 import { useBlockBack } from "./hooks";
 import { navRef } from "@/navigation/ref";
+import { ThemeProvider } from "./theme/provider";
 
 const Navigation = createStaticNavigation(RootNavigator)
 
 const App = () => {
   useBlockBack();
   return (
-    <Navigation theme={AppTheme} ref={navRef as any} />
+    <ThemeProvider>
+      <Navigation ref={navRef as any} />
+    </ThemeProvider>
   );
 }
 

@@ -1,29 +1,37 @@
-import { radius, spacing } from "@/theme";
-import { useTheme } from "@react-navigation/native";
-import { ActivityIndicator, Pressable, Text, ViewStyle } from "react-native";
+import { useTheme } from "@/hooks"
+import { radius, sizes, spacing } from "@/theme";
+import { Pressable, PressableProps, View } from "react-native";
 
-type ButtonProps = {
-    text: string;
-    isLoading?: boolean;
-    onPress?: () => void;
-}
-const Button = (props: ButtonProps & { style?: ViewStyle }) => {
-    const theme = useTheme();
+const Button = ({ onPress, props, children, style }: { onPress?: PressableProps["onPress"]; props?: PressableProps; children?: React.ReactNode; style?: PressableProps["style"] }) => {
+    const { theme } = useTheme();
+
     return (
         <Pressable
-            onPress={props?.onPress}
-            style={{
-                backgroundColor: theme.colors.primary,
-                padding: spacing.medium,
-                borderRadius: radius.medium,
-                minWidth: 120,
-                flexDirection: "row",
-                justifyContent: "center",
-                ...props.style
-            }}
+            style={({ pressed }) => [
+                {
+                    flex: 1,
+                    padding: spacing.md,
+                    borderRadius: radius.button.lg,
+                    opacity: pressed ? 0.8 : 1,
+                    backgroundColor: props?.disabled ? theme.colors.disabled : theme.colors.primary,
+                    flexDirection: "row",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    width: "100%",
+                    height: sizes.button.md,
+                    borderTopLeftRadius: radius.button.md,
+                    borderTopRightRadius: radius.button.md,
+                    borderBottomLeftRadius: radius.button.md,
+                    borderBottomRightRadius: radius.button.md,
+                    paddingHorizontal: spacing.md,
+                    ...style
+                }
+            ]}
+            {...props}
+            onPress={onPress}
         >
-            {props.isLoading ? <ActivityIndicator /> : <Text style={{ color: theme.colors.text }}>{props?.text}</Text>}
-        </Pressable>
+            {children}
+        </Pressable >
     );
 }
 
