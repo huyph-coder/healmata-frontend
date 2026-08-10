@@ -1,5 +1,5 @@
 import { Button } from "@/components"
-import { auth } from "@/features/auth/api/login"
+import { auth } from "@/features/auth/api/authApi"
 import { StackActions } from "@react-navigation/native"
 import { Text } from "react-native"
 import { SafeAreaView } from "react-native-safe-area-context"

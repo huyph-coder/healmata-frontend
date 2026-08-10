@@ -1,0 +1,7 @@
+export type AuthStatus =
+  | "UNKNOWN"
+  | "CHECKING_SESSION"
+  | "UNAUTHENTICATED"
+  | "AUTHENTICATING"
+  | "AUTHENTICATED"
+  | "SESSION_EXPIRED";
