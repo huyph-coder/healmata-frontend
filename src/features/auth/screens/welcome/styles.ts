@@ -1,13 +1,18 @@
-import { spacing } from "@/theme";
+import safeArea from "@/theme/safeArea";
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        gap: spacing.medium,
+        gap: 141,
+        paddingTop: safeArea.top,
+        paddingRight: safeArea.right,
+        paddingBottom: safeArea.bottom,
+        paddingLeft: safeArea.left,
     }
 })
 
-export default styles
+export default styles;
