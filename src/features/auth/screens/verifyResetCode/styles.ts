@@ -2,11 +2,17 @@ import { spacing } from "@/theme";
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-    container: {
+    root: {
         flex: 1,
+        backgroundColor: '#EEF7F2',
+    },
+    container: {
         justifyContent: "center",
         alignItems: "center",
-        gap: spacing.medium,
+    },
+    button: {
+        color: 'black',
+        
     }
 })
 

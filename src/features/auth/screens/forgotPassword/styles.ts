@@ -7,20 +7,16 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     container: {
-        flex: 1,
         justifyContent: "flex-start",
         alignItems: "center",
     },
     button: {
-        marginHorizontal: 30,
+        marginHorizontal: 25,
     },
     buttonContainer: {
         gap: 23,
-        paddingVertical: 150,
+        paddingVertical: 180,
     },
-    text: {
-        fontSize: 30,
-    }
 })
 
 export default styles

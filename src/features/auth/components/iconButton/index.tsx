@@ -1,26 +1,19 @@
-import { Pressable, View, Text } from "react-native";
-import styles from "./styles";
+import { Pressable, View } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
 type IconButtonProps = {
-  text: string;
-  imageName: string;
+  name: string;
+  size: number;
+  color: string;
   onPress?: () => void;
-};
+}
 
 const IconButton = (props: IconButtonProps) => {
   return (
-    <Pressable onPress={props?.onPress} style={({pressed}) => [styles.container, pressed && styles.pressed]}>
-      <View style={styles.button}>
-        <View style={styles.iconContainer}>
-          <Ionicons name={props.imageName as any} size={17} color="white" />
-        </View>
-        <View style={styles.textContainer}>
-          <Text style={styles.text}>{props.text}</Text>
-        </View>
-      </View>
+    <Pressable onPress={props?.onPress}>
+      <Ionicons name={props.name as any} size={props.size} color={props.color}/>
     </Pressable>
-  );
-};
+  )
+}
 
 export default IconButton;

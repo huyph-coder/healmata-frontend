@@ -1,23 +1,44 @@
+import { Text, View } from "react-native";
+
 import { Button } from "@/components";
 import { StaticScreenProps } from "@react-navigation/native";
-import { Text } from "react-native"
-import { SafeAreaView } from "react-native-safe-area-context"
+import { SafeAreaView } from "react-native-safe-area-context";
 import styles from "./styles";
-import { useNavigation } from "@react-navigation/native"
+import { useNavigation } from "@react-navigation/native";
+import CloseButton from "../../components/screenDetail/closeButton";
+import Title from "../../components/screenDetail/title";
 
 type Props = StaticScreenProps<{
-    resetRequestId?: string;
-}>
+  resetRequestId?: string;
+}>;
 
 const VerifyResetCodeScreen = ({ route }: Props) => {
-    const navigation = useNavigation();
-    const { resetRequestId } = route.params;
+  const navigation = useNavigation();
+  const { resetRequestId } = route.params;
 
-    return <SafeAreaView style={styles.container}>
-        <Text>VerifyResetCode ({resetRequestId}) Screen</Text>
-        <Button text="Back" onPress={() => navigation.goBack()} />
-        <Button text="Reset" onPress={() => navigation.navigate("Auth", { screen: "ResetPassword", params: { resetToken: "123456" } })} />
-    </SafeAreaView>
-}
+  function closeHandler() {
+    navigation.goBack();
+  }
 
-export default VerifyResetCodeScreen
+  return (
+    <View style={styles.root}>
+      <SafeAreaView style={styles.container}>
+        <CloseButton onPress={closeHandler} />
+        <Title>Enter the OTP code</Title>
+
+        <Button
+          onPress={() =>
+            navigation.navigate("Auth", {
+              screen: "ResetPassword",
+              params: { resetToken: "123456" },
+            })
+          }
+          text="Reset"
+          
+        />
+      </SafeAreaView>
+    </View>
+  );
+};
+
+export default VerifyResetCodeScreen;

@@ -3,7 +3,7 @@ import { useTheme } from "@react-navigation/native";
 import { ActivityIndicator, Pressable, Text, ViewStyle } from "react-native";
 
 type ButtonProps = {
-    text: string;
+    text: React.ReactNode;
     isLoading?: boolean;
     onPress?: () => void;
 }
@@ -22,7 +22,7 @@ const Button = (props: ButtonProps & { style?: ViewStyle }) => {
                 ...props.style
             }}
         >
-            {props.isLoading ? <ActivityIndicator /> : <Text style={{ color: theme.colors.text }}>{props?.text}</Text>}
+            {props.isLoading ? <ActivityIndicator /> : <Text style={{ color: theme.colors.text }}>{props.text}</Text>}
         </Pressable>
     );
 }
