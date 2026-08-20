@@ -1,23 +1,46 @@
-import { SafeAreaView } from "react-native-safe-area-context"
-import { Button, Text } from "@/components"
-import styles from "./styles"
-import { useNavigation } from "@react-navigation/native"
-import { Image, Pressable, View } from "react-native"
+import { Image, Text, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { Button } from "@/components";
+import styles from "./styles";
+import { useNavigation } from "@react-navigation/native";
+import { IconButton } from "../../components";
+import { useTheme } from "@/hooks";
 
 const ForgotPasswordScreen = () => {
-    const navigation = useNavigation();
+  const { theme } = useTheme();
+  const navigation = useNavigation();
 
-    return <SafeAreaView style={styles.container}>
-        <Pressable style={{ flexDirection: "row", justifyContent: "flex-start", width: "100%" }} onPress={() => navigation.canGoBack() && navigation.goBack()}>
-            <Image style={{ width: 31, height: 36.17 }} source={require("@/assets/icon/back.png")} />
-        </Pressable>
-        <Text variant="title" style={{ textAlign: "center", "width": 160, "height": 70, backgroundColor: "lightgray" }}>Bạn quên mật khẩu?</Text>
-        <View>
-            <Button>
-                <Text>Gửi mã khôi phục qua email</Text>
-            </Button>
+  return (
+    <SafeAreaView style={styles.container}>
+      <Text>ForgotPassword Screen</Text>
+      <View style={styles.buttonContainer}>
+        <View style={styles.button}>
+          <IconButton
+            onPress={() => {}}
+            imageName="mail-outline"
+            text="The recovery code will be sent to your email"
+          />
         </View>
+        <View style={styles.button}>
+          <IconButton
+            onPress={() => {}}
+            imageName="phone-portrait-outline"
+            text="Send the recovery code via phone."
+          />
+        </View>
+      </View>
+      <Button onPress={() => navigation.goBack()}>
+        goBack
+      </Button>
+      <Button
+        onPress={() =>
+          navigation.navigate("Auth", { screen: "VerifyResetCode", params: {} })
+        }
+      >
+        OTPScreen 
+      </Button>
     </SafeAreaView>
-}
+  );
+};
 
-export default ForgotPasswordScreen
+export default ForgotPasswordScreen;

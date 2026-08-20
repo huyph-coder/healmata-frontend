@@ -1,5 +1,5 @@
 import { Divider, Text, TextInput } from "@/components"
-import { auth } from "@/features/auth/api/login"
+import { auth } from "@/features/auth/api"
 import { StackActions } from "@react-navigation/native"
 import { SafeAreaView } from "react-native-safe-area-context"
 import styles from "./styles"
