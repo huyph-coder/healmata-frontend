@@ -1,1 +1,1 @@
-export { loginBasic } from './authApi'
+export { auth } from './authApi'
