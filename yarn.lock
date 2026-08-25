@@ -559,6 +559,11 @@
   dependencies:
     "@types/hammerjs" "^2.0.36"
 
+"@expo-google-fonts/be-vietnam-pro@^0.4.1":
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/@expo-google-fonts/be-vietnam-pro/-/be-vietnam-pro-0.4.1.tgz#95a36cd3c94b9b8096e0728e5655d087262a37fa"
+  integrity sha512-4o2bsqU1zcC6NZf5FRYB+7gE49waNWYOGc5c5qLfPgrSqqr61hS2Bz4TVPgxudO038tLydSyPxV8e79g8j5DpQ==
+
 "@expo/cli@^57.0.16":
   version "57.0.16"
   resolved "https://registry.yarnpkg.com/@expo/cli/-/cli-57.0.16.tgz#751579acf585ec078a31c65a26600822e91d05a2"
@@ -1967,7 +1972,7 @@ expo-file-system@~57.0.4:
   resolved "https://registry.yarnpkg.com/expo-file-system/-/expo-file-system-57.0.4.tgz#cc58cff9236820b6ee8da3dcb38dc980844e51b1"
   integrity sha512-h8qDOxSW1SQfnZyvH0+HeOfXCr2X4v3x50+d19JuyQcjDR+JA3tng20TlQxIHazzLPPbwtSKA1Dj3+XIOpnoKg==
 
-expo-font@~57.0.1:
+expo-font@^57.0.1, expo-font@~57.0.1:
   version "57.0.1"
   resolved "https://registry.yarnpkg.com/expo-font/-/expo-font-57.0.1.tgz#7932576f74a22b4259d0f27bf61425f41bbd5a79"
   integrity sha512-QyS9L1Kh9sKJg4gfU6rdbpxpmH+DyzBX8z6jVvXMUDoqLr1GqmkO/Wu379KCXjL///kWbhpNlbi7AgBuj4VdIQ==

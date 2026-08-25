@@ -3,9 +3,9 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   iconButton: {
     width: "85%",
-    marginTop: 10,
-    marginBottom: 30,
+    marginBottom: 20,
     justifyContent: "flex-start",
+    alignItems: "flex-start",
   },
 });
 

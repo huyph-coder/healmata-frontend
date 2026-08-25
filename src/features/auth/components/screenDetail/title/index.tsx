@@ -6,10 +6,10 @@ type TitleProps = {
   children: React.ReactNode;
 };
 
-const Title = ({ children }: TitleProps) => {
+const Title = (props: TitleProps) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>{children}</Text>
+      <Text style={styles.text}>{props.children}</Text>
     </View>
   );
 };

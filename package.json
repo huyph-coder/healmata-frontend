@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.ts",
   "dependencies": {
+    "@expo-google-fonts/be-vietnam-pro": "^0.4.1",
     "@expo/vector-icons": "^15.1.1",
     "@react-native-masked-view/masked-view": "0.3.2",
     "@react-navigation/elements": "^2.9.29",
@@ -11,6 +12,7 @@
     "axios": "^1.18.1",
     "expo": "~57.0.2",
     "expo-constants": "~57.0.3",
+    "expo-font": "^57.0.1",
     "expo-linking": "~57.0.1",
     "expo-status-bar": "~57.0.0",
     "react": "19.2.3",
