@@ -11,7 +11,7 @@ const BasicLoginBtn = ({ onPress }: { onPress?: PressableProps["onPress"] }) => 
 
     return (<Button style={{ gap: 10 }} onPress={onPress || handleLogin}>
         <Image style={{ width: 23, height: 23 }} source={require("@/assets/icon/icon-account.png")} />
-        <Text>Đăng nhập</Text>
+        <Text>Login</Text>
     </Button>)
 }
 

@@ -7,6 +7,7 @@ import { useNavigation } from "@react-navigation/native"
 import { Image, Pressable, ScrollView, View } from "react-native"
 import { useTheme } from "@/hooks"
 import { AppleLoginBtn, BasicLoginBtn, GoogleLoginBtn } from "@/features/auth/components"
+import CloseButton from "../../components/screenDetail/closeButton"
 
 const LoginScreen = () => {
     const navigation = useNavigation();
@@ -30,8 +31,7 @@ const LoginScreen = () => {
             <Pressable style={{ flexDirection: "row", justifyContent: "flex-start", width: "100%" }} onPress={() => navigation.canGoBack() && navigation.goBack()}>
                 <Image style={{ width: 31, height: 36.17 }} source={require("@/assets/icon/back.png")} />
             </Pressable>
-
-            <Text variant="title" style={{ textAlign: "center" }}>Đăng nhập</Text>
+            <Text variant="title" style={{ textAlign: "center" }}>Login</Text>
 
             <View style={{ gap: 23, justifyContent: "flex-end", width: "100%" }}>
                 {/* <Banner>
@@ -41,18 +41,18 @@ const LoginScreen = () => {
                 <TextInput secureTextEntry placeholder="Mật khẩu" />
             </View>
 
-            <Text onPress={() => navigation.navigate("Auth", { screen: "ForgotPassword" })} style={{ textAlign: "right", width: "100%" }} variant="link">Bạn quên mật khẩu?</Text>
+            <Text onPress={() => navigation.navigate("Auth", { screen: "ForgotPassword" })} style={{ textAlign: "right", width: "100%" }} variant="link">Forgot password?</Text>
 
             <View style={{
                 gap: 20, width: "100%", justifyContent: "flex-end", alignItems: "center"
             }}>
                 <BasicLoginBtn onPress={handleLogin} />
                 <Text>
-                    Chưa có tài khoản? <Text variant="link" onPress={() => navigation.navigate("Auth", { screen: "SignUp" })}
-                    >Đăng ký</Text>
+                    Don't have an account yet? <Text variant="link" onPress={() => navigation.navigate("Auth", { screen: "SignUp" })}
+                    >Register now!</Text>
                 </Text>
                 <Divider>
-                    <Text>Hoặc</Text>
+                    <Text>Or</Text>
                 </Divider>
             </View>
 
