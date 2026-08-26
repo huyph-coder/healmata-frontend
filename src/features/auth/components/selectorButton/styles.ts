@@ -21,8 +21,7 @@ const styles = StyleSheet.create({
     opacity: 0.75,
   },
   text: {
-    fontSize: typography.fontSize.medium,
-    fontFamily: typography.fontFamily.medium,
+    fontSize: 16,
   },
   iconContainer: {
     backgroundColor: "black",

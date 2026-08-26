@@ -1,12 +1,9 @@
-import { BeVietnamPro_400Regular } from '@expo-google-fonts/be-vietnam-pro';
 
 const typography = {
-
-    fontFamily: {
-        regular: 'System',
-        medium: "System",
-        light: "System",
-        thin: "System",
+    body: {
+        fontSize: 16,
+        fontWeight: 500,
+        lineHeight: 24,
     },
     caption: {
         fontSize: 18,
@@ -33,7 +30,7 @@ const typography = {
         fontWeight: 700,
         lineHeight: 24,
         textDecorationLine: "underline",
-    }
+    },
 } as const;
 
 export default typography;

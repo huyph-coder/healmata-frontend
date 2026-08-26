@@ -10,7 +10,6 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 30,
-    fontFamily: typography.fontFamily.regular,
     fontWeight: "bold",
   },
 });
