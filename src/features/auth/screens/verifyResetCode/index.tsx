@@ -1,14 +1,13 @@
-import { Text, View, Image, Keyboard } from "react-native";
+import { Text, View, Image, Keyboard, Pressable } from "react-native";
 import { useRef, useState } from "react";
 
-import { Button } from "@/components";
 import { StaticScreenProps } from "@react-navigation/native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import styles from "./styles";
 import { useNavigation } from "@react-navigation/native";
 import CloseButton from "../../components/screenDetail/closeButton";
 import Title from "../../components/screenDetail/title";
-import ButtonOne from "../../components/screenDetail/button";
+import Button from "../../components/screenDetail/button";
 import { TextInput } from "react-native-gesture-handler";
 import OtpCell from "../../components/otpCell";
 
@@ -34,9 +33,17 @@ const VerifyResetCodeScreen = ({ route }: Props) => {
     navigation.goBack();
   }
 
-	function submitOtp(){ 
-		console.log(otp);
-	}
+  function resetHandler() {
+    navigation.navigate("Auth", {
+      screen: "ResetPassword",
+      params: { resetToken: "123456" },
+    });
+    submitOtp();
+  }
+
+  function submitOtp() {
+    console.log(otp);
+  }
 
   return (
     <View style={styles.root}>
@@ -45,7 +52,10 @@ const VerifyResetCodeScreen = ({ route }: Props) => {
         <Title>Enter the OTP code</Title>
         <View style={styles.inputContainer}>
           <View>
-            <Image style={styles.icon} source={require("@/assets/ClockIcon.png")} />
+            <Image
+              style={styles.icon}
+              source={require("@/assets/ClockIcon.png")}
+            />
           </View>
           <View style={styles.otpInput}>
             <OtpCell
@@ -71,7 +81,8 @@ const VerifyResetCodeScreen = ({ route }: Props) => {
                 },
               }}
             />
-            <OtpCell ref={inputRef3}
+            <OtpCell
+              ref={inputRef3}
               textInputConfig={{
                 maxLength: MAXLENGTH,
                 onChangeText: (text) => {
@@ -80,8 +91,10 @@ const VerifyResetCodeScreen = ({ route }: Props) => {
                     inputRef4.current?.focus();
                   }
                 },
-              }} />
-            <OtpCell ref={inputRef4}
+              }}
+            />
+            <OtpCell
+              ref={inputRef4}
               textInputConfig={{
                 maxLength: MAXLENGTH,
                 onChangeText: (text) => {
@@ -90,8 +103,10 @@ const VerifyResetCodeScreen = ({ route }: Props) => {
                     inputRef5.current?.focus();
                   }
                 },
-              }}/>
-            <OtpCell ref={inputRef5}
+              }}
+            />
+            <OtpCell
+              ref={inputRef5}
               textInputConfig={{
                 maxLength: MAXLENGTH,
                 onChangeText: (text) => {
@@ -100,35 +115,30 @@ const VerifyResetCodeScreen = ({ route }: Props) => {
                     inputRef6.current?.focus();
                   }
                 },
-              }}/>
-            <OtpCell ref={inputRef6}
+              }}
+            />
+            <OtpCell
+              ref={inputRef6}
               textInputConfig={{
                 maxLength: MAXLENGTH,
                 onChangeText: (text) => {
                   setOtp({ ...otp, 6: text });
                   if (text.length === MAXLENGTH) {
-										Keyboard.dismiss();
+                    Keyboard.dismiss();
                   }
                 },
-              }}/>
+              }}
+            />
           </View>
-          <Text style={styles.text}>Haven't received the code yet? Resend it.</Text>
+          <View>
+            <Text style={styles.text}>
+              Haven't received the code yet? Resend it.
+            </Text>
+          </View>
         </View>
         <View style={styles.button}>
-
-        <ButtonOne>
-          Reset Password
-        </ButtonOne>
+          <Button onPress={resetHandler}>Reset password</Button>
         </View>
-        <Button
-          onPress={() =>
-            navigation.navigate("Auth", {
-              screen: "ResetPassword",
-              params: { resetToken: "123456" },
-            })
-          }
-          text="Reset Password"
-        />
       </SafeAreaView>
     </View>
   );

@@ -7,16 +7,16 @@ const styles = StyleSheet.create({
     backgroundColor: "#EEF7F2",
   },
   container: {
+    flex: 1,
     justifyContent: "center",
     alignItems: "center",
   },
   button: {
-    paddingTop: 100,
+    paddingTop: 0,
   },
   inputContainer: {
+    flex: 1,
     gap: 15,
-    marginTop: 180,
-    marginBottom: 130,
     justifyContent: "center",
     alignItems: 'center',
   },
