@@ -1,8 +1,12 @@
+import { BeVietnamPro_400Regular } from '@expo-google-fonts/be-vietnam-pro';
+
 const typography = {
-    body: {
-        fontSize: 16,
-        fontWeight: 500,
-        lineHeight: 24,
+
+    fontFamily: {
+        regular: 'System',
+        medium: "System",
+        light: "System",
+        thin: "System",
     },
     caption: {
         fontSize: 18,

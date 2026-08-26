@@ -1,21 +1,26 @@
 import { Button } from "@/components";
-import { spacing } from "@/theme";
+
+import { spacing, typography } from "@/theme";
+
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-    container: {
+    root: {
         flex: 1,
-        justifyContent: "center",
+    },
+    container: {
+        justifyContent: "flex-start",
         alignItems: "center",
-        gap: 16,
+
     },
     button: {
-        marginHorizontal: 30,
-        marginVertical: 10,
+        marginHorizontal: 25,
     },
     buttonContainer: {
+        gap: 23,
         paddingVertical: 180,
-    }
+    },
+
 })
 
 export default styles

@@ -1,38 +1,50 @@
-import { useTheme } from "@/hooks"
-import { radius, sizes, spacing } from "@/theme";
-import { Pressable, PressableProps, View } from "react-native";
 
-const Button = ({ onPress, props, children, style }: { onPress?: PressableProps["onPress"]; props?: PressableProps; children?: React.ReactNode; style?: PressableProps["style"] }) => {
-    const { theme } = useTheme();
+import { radius, spacing } from "@/theme";
+import { useTheme } from "@react-navigation/native";
+import {
+  ActivityIndicator,
+  Pressable,
+  Text,
+  ViewStyle,
+  View,
+} from "react-native";
 
-    return (
-        <Pressable
-            style={({ pressed }) => [
-                {
-                    flex: 1,
-                    padding: spacing.md,
-                    borderRadius: radius.button.lg,
-                    opacity: pressed ? 0.8 : 1,
-                    backgroundColor: props?.disabled ? theme.colors.disabled : theme.colors.primary,
-                    flexDirection: "row",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    width: "100%",
-                    height: sizes.button.md,
-                    borderTopLeftRadius: radius.button.md,
-                    borderTopRightRadius: radius.button.md,
-                    borderBottomLeftRadius: radius.button.md,
-                    borderBottomRightRadius: radius.button.md,
-                    paddingHorizontal: spacing.md,
-                    ...style
-                }
-            ]}
-            {...props}
-            onPress={onPress}
-        >
-            {children}
-        </Pressable >
-    );
-}
+type ButtonProps = {
+  text: React.ReactNode;
+  isLoading?: boolean;
+  onPress?: () => void;
+};
+const Button = (
+  props: ButtonProps & { style?: ViewStyle; textStyle?: ViewStyle },
+) => {
+  const theme = useTheme();
+  return (
+    <Pressable
+      onPress={props?.onPress}
+      style={{
+        backgroundColor: theme.colors.primary,
+        minWidth: 120,
+        flexDirection: "row",
+        justifyContent: "center",
+        ...props.style,
+      }}
+    >
+        {props.isLoading ? (
+          <ActivityIndicator />
+        ) : (
+            <View
+        style={{
+          justifyContent: "center",
+          alignItems: "center",
+        }}>
+          <Text style={{ color: theme.colors.text, ...props.textStyle }}>
+            {props.text}
+          </Text>
+      </View>
+        )}
+    </Pressable>
+  );
+};
+
 
 export default Button;
