@@ -1,19 +1,72 @@
-import { Button } from "@/components"
-import { Text } from "react-native"
-import { SafeAreaView } from "react-native-safe-area-context"
-import styles from "./styles"
-import { useNavigation } from "@react-navigation/native"
+import React from "react";
+import { useNavigation } from "@react-navigation/native";
+import {
+    SafeAreaView,
+    Text,
+    TouchableOpacity,
+    View,
+    Image,
+    StatusBar,
+} from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
+import { styles } from "./styles";
 
-const WelcomeScreen = () => {
-    const navigation = useNavigation();
+export default function WelcomeScreen() {
+    const navigation = useNavigation<any>();
 
-    return <SafeAreaView style={styles.container}>
-        <Text>Welcome Screen</Text>
-        <Button text="Back" onPress={() => navigation.goBack()} />
-        <Button text="Home" style={{ backgroundColor: "orange" }} onPress={() => navigation.navigate("App", { screen: "Home" })} />
-        <Button text="Login" style={{ backgroundColor: "red" }} onPress={() => navigation.navigate("Auth", { screen: "Login" })} />
-        <Button text="Create Account" style={{ backgroundColor: "green" }} onPress={() => navigation.navigate("Auth", { screen: "SignUp" })} />
-    </SafeAreaView>
+    return (
+        <>
+            <StatusBar barStyle="dark-content" backgroundColor="#F8FCF7" />
+
+            <LinearGradient
+                colors={["#F8FCF7", "#EDF8E2", "#DDF3C3"]}
+                style={styles.container}
+            >
+                <SafeAreaView style={styles.safe}>
+                    <View style={styles.center}>
+                        <Image
+                            source={require("../../../../assets/images/logo.png")}
+                            style={styles.logo}
+                            resizeMode="contain"
+                        />
+
+                        <Text style={styles.title}>
+                            Proactive {"\n"} Healthcare
+                        </Text>
+
+                        <Text style={styles.subTitle}>
+                            Monitor, remind, and take care{"\n"}
+                            of your health every day.
+                        </Text>
+                    </View>
+
+                    <View style={styles.bottomContainer}>
+                        <TouchableOpacity
+                            activeOpacity={0.8}
+                            style={styles.buttonContainer}
+                            onPress={() => navigation.navigate("Login")}
+                        >
+                            <Image
+                                source={require("../../../../assets/images/loginw.png")}
+                                style={styles.loginImage}
+                                resizeMode="contain"
+                            />
+                        </TouchableOpacity>
+
+                        <View style={styles.register}>
+                            <Text style={styles.registerText}>
+                                Don't have an account yet?
+                            </Text>
+
+                            <TouchableOpacity
+                                onPress={() => navigation.navigate("signUp")}
+                            >
+                                <Text style={styles.registerLink}> Register now!</Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+                </SafeAreaView>
+            </LinearGradient>
+        </>
+    );
 }
-
-export default WelcomeScreen

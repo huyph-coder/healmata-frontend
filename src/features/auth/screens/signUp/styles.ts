@@ -1,13 +1,130 @@
-import { spacing } from "@/theme";
 import { StyleSheet } from "react-native";
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        gap: spacing.medium,
-    }
-})
-
-export default styles
+export default StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#FFFFFF",
+  },
+  scrollContent: {
+    flexGrow: 1,
+    paddingHorizontal: 24,
+    paddingTop: 10, 
+    paddingBottom: 30,
+    alignItems: "center",
+  },
+  headerContainer: {
+    width: "100%",
+    alignItems: "flex-start",
+    marginBottom: 10,
+    zIndex: 10, 
+  },
+  closeButton: {
+    width: 44,
+    height: 44,
+    justifyContent: "center",
+    alignItems: "flex-start", 
+    marginTop: 30, 
+  },
+  closeIcon: {
+    fontSize: 24, 
+    color: "#20B2AA",
+    fontWeight: "600",
+  },
+  title: {
+    fontSize: 28,
+    fontWeight: "700",
+    textAlign: "center",
+    color: "#1F2937",
+    marginBottom: 20,         
+  },
+  formContainer: {
+    width: "100%",
+    maxWidth: 400, 
+    alignItems: "center",
+  },
+  input: {
+    width: "100%",
+    height: 50,
+    borderWidth: 1,
+    borderColor: "#D1D5DB",
+    borderRadius: 12,
+    paddingHorizontal: 16,
+    fontSize: 15,
+    marginBottom: 14,
+    color: "#1F2937",
+    backgroundColor: "#FFFFFF",
+  },
+  inputError: {
+    borderColor: "#EF4444",
+  },
+  errorText: {
+    width: "100%",
+    color: "#EF4444",
+    fontSize: 12,
+    marginBottom: 10,
+    marginLeft: 4,
+    textAlign: "left",
+  },
+  signUpButton: {
+    width: "100%",
+    height: 50,
+    backgroundColor: "#81C784",
+    borderRadius: 12,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 6,
+    marginBottom: 12,         
+  },
+  signUpButtonDisabled: {
+    opacity: 0.6,
+  },
+  signUpButtonText: {
+    color: "#FFFFFF",
+    fontWeight: "600",
+    fontSize: 16,
+  },
+  loginRow: {
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: 20,       
+  },
+  loginText: {
+    color: "#4B5563",
+    fontSize: 14,
+  },
+  loginLink: {
+    color: "#1F2937",
+    fontWeight: "bold",
+    fontSize: 14,
+    textDecorationLine: "underline",
+  },
+  divider: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 20,         
+    width: "100%",
+  },
+  line: {
+    flex: 1,
+    height: 1,
+    backgroundColor: "#E5E7EB",
+  },
+  or: {
+    marginHorizontal: 12,
+    color: "#9CA3AF",
+    fontSize: 14,
+  },
+  socialButton: {
+    width: "100%",
+    height: 50, 
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: 17,      
+  },
+  socialImage: {
+    width: "100%",       
+    height: 60,      
+    resizeMode: "contain", 
+  },
+});

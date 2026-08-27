@@ -16,11 +16,17 @@
         "backgroundImage": "./src/assets/android-icon-background.png",
         "monochromeImage": "./src/assets/android-icon-monochrome.png"
       },
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.trucvy24.healmatafrontend"
     },
     "scheme": "healmata",
     "plugins": [
-      "expo-status-bar"
-    ]
+      "expo-secure-store"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "dd4bcde8-9c5c-4c1a-8a7e-6edc77ab6d9e"
+      }
+    }
   }
 }
